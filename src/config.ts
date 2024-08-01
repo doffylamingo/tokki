@@ -5,6 +5,7 @@ import { ElleScraper } from "./modules/elle";
 import { EsquireScraper } from "./modules/esquire";
 import { HarpersBazaarScraper } from "./modules/harpersbazaar";
 import { IlganSportsScraper } from "./modules/ilgansports";
+import { ImbcNewsScraper } from "./modules/imbcnews";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -42,5 +43,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "isplus.com": {
     constructor: IlganSportsScraper,
     matchers: [/\/article\/view\/[a-zA-Z0-9]+$/],
+  },
+  "enews.imbc.com": {
+    constructor: ImbcNewsScraper,
+    matchers: [/\/News\/RetrieveNewsInfo\/\d+$/],
   },
 };
