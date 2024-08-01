@@ -3,6 +3,7 @@ import { DazedKoreaScraper } from "./modules/dazedkorea";
 import { DispatchScraper } from "./modules/dispatch";
 import { ElleScraper } from "./modules/elle";
 import { EsquireScraper } from "./modules/esquire";
+import { HarpersBazaarScraper } from "./modules/harpersbazaar";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -31,6 +32,10 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   },
   "esquirekorea.co.kr": {
     constructor: EsquireScraper,
+    matchers: [/\/article\/\d+$/],
+  },
+  "harpersbazaar.co.kr": {
+    constructor: HarpersBazaarScraper,
     matchers: [/\/article\/\d+$/],
   },
 };

@@ -17,7 +17,7 @@ export class DazedKoreaScraper extends TokkiBase {
 
     const $ = cheerio.load(data as string);
     const postTitle = $(".article-header h1.title").text().trim();
-    const mediaUrls = $("div.embed-content img")
+    const mediaUrls = $(".embed-content img")
       .map((_, el) => {
         let src = $(el).attr("src");
 

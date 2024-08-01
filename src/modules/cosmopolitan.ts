@@ -16,8 +16,8 @@ export class CosmopolitanScraper extends TokkiBase {
     }
 
     const $ = cheerio.load(data as string);
-    const postTitle = $("h2.tit_article").text().trim();
-    const mediaUrls = $("div.atc_body_cont img")
+    const postTitle = $(".tit_article").text().trim();
+    const mediaUrls = $(".atc_body_cont img")
       .map((_, el) => `${BASE_URL}${$(el).attr("src")}`)
       .get();
 
