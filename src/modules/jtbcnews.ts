@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 import { TokkiBase } from "../base";
 
-export class IMBCNewsScraper extends TokkiBase {
+export class JTBCNewsScraper extends TokkiBase {
   constructor() {
     super("html");
   }
@@ -14,9 +14,9 @@ export class IMBCNewsScraper extends TokkiBase {
     }
 
     const $ = cheerio.load(data as string);
-    const postTitle = $(".title").text().trim();
-    const mediaUrls = $(".ent-cont img")
-      .map((_, el) => "https:" + $(el).attr("src"))
+    const postTitle = $("h3#jtbcBody").text().trim();
+    const mediaUrls = $("#ijam_content img")
+      .map((_, el) => $(el).attr("src"))
       .get();
 
     return {
