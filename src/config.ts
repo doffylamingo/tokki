@@ -4,6 +4,7 @@ import { DispatchScraper } from "./modules/dispatch";
 import { ElleScraper } from "./modules/elle";
 import { EsquireScraper } from "./modules/esquire";
 import { HarpersBazaarScraper } from "./modules/harpersbazaar";
+import { IlganSportsScraper } from "./modules/ilgansports";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -16,7 +17,7 @@ interface ScraperEntry {
 export const scraperConfig: { [key: string]: ScraperEntry } = {
   "cosmopolitan.co.kr": {
     constructor: CosmopolitanScraper,
-    matchers: [/\/article\/\d+/],
+    matchers: [/\/article\/\d+$/],
   },
   "dazedkorea.com": {
     constructor: DazedKoreaScraper,
@@ -37,5 +38,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "harpersbazaar.co.kr": {
     constructor: HarpersBazaarScraper,
     matchers: [/\/article\/\d+$/],
+  },
+  "isplus.com": {
+    constructor: IlganSportsScraper,
+    matchers: [/\/article\/view\/[a-zA-Z0-9]+$/],
   },
 };
