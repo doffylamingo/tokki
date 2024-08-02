@@ -7,6 +7,7 @@ import { HarpersBazaarScraper } from "./modules/harpersbazaar";
 import { IlganSportsScraper } from "./modules/ilgansports";
 import { IMBCNewsScraper } from "./modules/imbcnews";
 import { JTBCNewsScraper } from "./modules/jtbcnews";
+import { KoreanVibeScraper } from "./modules/koreanvibe";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -52,5 +53,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "news.jtbc.co.kr": {
     constructor: JTBCNewsScraper,
     matchers: [/\/article\/article\.aspx\?news_id=[a-zA-Z0-9]+$/],
+  },
+  "korean-vibe.com": {
+    constructor: KoreanVibeScraper,
+    matchers: [/\/news\/newsview\.php\?ncode=\d+$/],
   },
 };

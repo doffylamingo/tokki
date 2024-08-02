@@ -25,7 +25,7 @@ export class DazedKoreaScraper extends TokkiBase {
           src = "/" + src?.replace(/(\.\.\/)+/g, "");
         }
 
-        return `${BASE_URL}${src}`;
+        return BASE_URL + src;
       })
       .get();
 

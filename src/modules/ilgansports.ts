@@ -18,7 +18,7 @@ export class IlganSportsScraper extends TokkiBase {
     const $ = cheerio.load(data as string);
     const postTitle = $("#viewTitle").text().trim();
     const mediaUrls = $("#article_body img")
-      .map((_, el) => `${BASE_URL}${$(el).attr("src")}`)
+      .map((_, el) => BASE_URL + $(el).attr("src"))
       .get();
 
     return {

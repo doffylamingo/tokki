@@ -22,7 +22,7 @@ export class EsquireScraper extends TokkiBase {
       "srcset",
     );
     const mediaUrls = $(".atc_body_cont img")
-      .map((_, el) => `${BASE_URL}${$(el).attr("src")}`)
+      .map((_, el) => BASE_URL + $(el).attr("src"))
       .get();
 
     if (headerMediaMobile) mediaUrls.push(BASE_URL + headerMediaMobile);
