@@ -25,6 +25,7 @@ export class IlganSportsScraper extends TokkiBase {
       source: url,
       title: postTitle,
       media: mediaUrls,
+      count: mediaUrls.length,
     };
   }
 }

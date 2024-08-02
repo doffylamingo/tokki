@@ -34,6 +34,7 @@ export class KoreanVibeScraper extends TokkiBase {
       source: url,
       title: postTitle,
       media: mediaUrls,
+      count: mediaUrls.length,
     };
   }
 }

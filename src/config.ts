@@ -8,6 +8,7 @@ import { IlganSportsScraper } from "./modules/ilgansports";
 import { IMBCNewsScraper } from "./modules/imbcnews";
 import { JTBCNewsScraper } from "./modules/jtbcnews";
 import { KoreanVibeScraper } from "./modules/koreanvibe";
+import { LOfficielScraper } from "./modules/lofficiel";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -57,5 +58,15 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "korean-vibe.com": {
     constructor: KoreanVibeScraper,
     matchers: [/\/news\/newsview\.php\?ncode=\d+$/],
+  },
+  "lofficielkorea.com": {
+    constructor: LOfficielScraper,
+    matchers: [/\/fashion|people|beauty|jewelry-and-watch\/[a-zA-Z0-9-]+$/],
+  },
+  "lofficielsingapore.com": {
+    constructor: LOfficielScraper,
+    matchers: [
+      /\/fashion|people|beauty|jewellery|style|culture\/[a-zA-Z0-9-]+$/,
+    ],
   },
 };

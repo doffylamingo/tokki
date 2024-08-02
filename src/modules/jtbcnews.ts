@@ -23,6 +23,7 @@ export class JTBCNewsScraper extends TokkiBase {
       source: url,
       title: postTitle,
       media: mediaUrls,
+      count: mediaUrls.length,
     };
   }
 }

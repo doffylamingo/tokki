@@ -33,6 +33,7 @@ export class DazedKoreaScraper extends TokkiBase {
       source: url,
       title: postTitle,
       media: mediaUrls,
+      count: mediaUrls.length,
     };
   }
 }
