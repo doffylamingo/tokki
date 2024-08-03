@@ -8,9 +8,9 @@ export class TokkiBase {
     this.type = type;
   }
 
-  protected async getData(
+  protected async getData<T>(
     url: string,
-  ): Promise<{ status: number; data: string | Record<string, any> }> {
+  ): Promise<{ status: number; data: string | T }> {
     try {
       const response = await ky.get(url, {
         retry: {

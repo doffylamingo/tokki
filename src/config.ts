@@ -9,6 +9,7 @@ import { IMBCNewsScraper } from "./modules/imbcnews";
 import { JTBCNewsScraper } from "./modules/jtbcnews";
 import { KoreanVibeScraper } from "./modules/koreanvibe";
 import { LOfficielScraper } from "./modules/lofficiel";
+import { MBCScraper } from "./modules/mbc";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -67,6 +68,12 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
     constructor: LOfficielScraper,
     matchers: [
       /\/fashion|people|beauty|jewellery|style|culture\/[a-zA-Z0-9-]+$/,
+    ],
+  },
+  "with.mbc.co.kr": {
+    constructor: MBCScraper,
+    matchers: [
+      /\/m\/pr\/photo\/view\.html\?idx=\d+&page=(\d?)+&keyword=([a-zA-Z0-9-]?)+$/,
     ],
   },
 };
