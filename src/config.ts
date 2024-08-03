@@ -10,6 +10,7 @@ import { JTBCNewsScraper } from "./modules/jtbcnews";
 import { KoreanVibeScraper } from "./modules/koreanvibe";
 import { LOfficielScraper } from "./modules/lofficiel";
 import { MBCScraper } from "./modules/mbc";
+import { MelonScraper } from "./modules/melon";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -75,5 +76,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
     matchers: [
       /\/m\/pr\/photo\/view\.html\?idx=\d+&page=(\d?)+&keyword=([a-zA-Z0-9-]?)+$/,
     ],
+  },
+  "melon.com": {
+    constructor: MelonScraper,
+    matchers: [/\/artist\/photo\.htm\?artistId=\d+$/],
   },
 };
