@@ -13,7 +13,9 @@ import { MBCScraper } from "./modules/mbc";
 import { MelonScraper } from "./modules/melon";
 import { NaverPostScraper } from "./modules/naverpost";
 import { News1craper } from "./modules/news1";
+// import { NewsenScraper } from "./modules/newsen";
 import { NewsJammScraper } from "./modules/newsjamm";
+import { OsenScraper } from "./modules/osen";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -96,4 +98,13 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
     constructor: News1craper,
     matchers: [/./],
   },
+  "osen.co.kr": {
+    constructor: OsenScraper,
+    matchers: [/\/article\/[a-zA-Z0-9-]+$/, /\/photo\/slide\/\d+/],
+  },
+  // Won't work because of certificate error
+  // "newsen.com": {
+  //   constructor: NewsenScraper,
+  //   matchers: [/\/news_view\.php\?uid=\d+/],
+  // },
 };
