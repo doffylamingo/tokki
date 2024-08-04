@@ -13,6 +13,10 @@ export class TokkiBase {
   ): Promise<{ status: number; data: string | T }> {
     try {
       const response = await ky.get(url, {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        },
         retry: {
           limit: 2,
           methods: ["get"],

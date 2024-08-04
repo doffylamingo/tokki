@@ -12,6 +12,7 @@ import { LOfficielScraper } from "./modules/lofficiel";
 import { MBCScraper } from "./modules/mbc";
 import { MelonScraper } from "./modules/melon";
 import { NaverPostScraper } from "./modules/naverpost";
+import { News1craper } from "./modules/news1";
 import { NewsJammScraper } from "./modules/newsjamm";
 import { Scraper } from "./types";
 
@@ -90,5 +91,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "newsjamm.co.kr": {
     constructor: NewsJammScraper,
     matchers: [/\/contents\/[a-zA-Z0-9]+$/],
+  },
+  "news1.kr": {
+    constructor: News1craper,
+    matchers: [/./],
   },
 };
