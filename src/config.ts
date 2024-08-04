@@ -11,6 +11,7 @@ import { KoreanVibeScraper } from "./modules/koreanvibe";
 import { LOfficielScraper } from "./modules/lofficiel";
 import { MBCScraper } from "./modules/mbc";
 import { MelonScraper } from "./modules/melon";
+import { NaverPostScraper } from "./modules/naverpost";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -80,5 +81,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "melon.com": {
     constructor: MelonScraper,
     matchers: [/\/artist\/photo\.htm\?artistId=\d+$/],
+  },
+  "post.naver.com": {
+    constructor: NaverPostScraper,
+    matchers: [/\/viewer\/postView\.naver\?volumeNo=\d+&memberNo=\d+$/],
   },
 };

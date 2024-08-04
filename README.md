@@ -36,4 +36,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests to h
 
 ## License
 
-This project is licensed under the GPLv2 License.
+This project is licensed under the GPLv3 License.
