@@ -12,6 +12,7 @@ import { LOfficielScraper } from "./modules/lofficiel";
 import { MBCScraper } from "./modules/mbc";
 import { MelonScraper } from "./modules/melon";
 import { NaverPostScraper } from "./modules/naverpost";
+import { NewsJammScraper } from "./modules/newsjamm";
 import { Scraper } from "./types";
 
 type ScraperConstructor = new () => Scraper;
@@ -85,5 +86,9 @@ export const scraperConfig: { [key: string]: ScraperEntry } = {
   "post.naver.com": {
     constructor: NaverPostScraper,
     matchers: [/\/viewer\/postView\.naver\?volumeNo=\d+&memberNo=\d+$/],
+  },
+  "newsjamm.co.kr": {
+    constructor: NewsJammScraper,
+    matchers: [/\/contents\/[a-zA-Z0-9]+$/],
   },
 };
